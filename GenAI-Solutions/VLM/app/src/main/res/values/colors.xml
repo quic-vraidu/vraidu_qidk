@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved. -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<resources>
+    <color name="colorPrimary">#1A237E</color>
+    <color name="colorPrimaryDark">#0D1257</color>
+    <color name="colorAccent">#5C6BC0</color>
+    <color name="colorSurface">#F5F5F5</color>
+    <color name="colorOnSurface">#212121</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="user_bubble">#E3F2FD</color>
+    <color name="assistant_bubble">#1A237E</color>
+    <color name="assistant_text">#FFFFFF</color>
+    <color name="input_bg">#FFFFFF</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="status_ok">#4CAF50</color>
+    <color name="status_error">#F44336</color>
+    <color name="status_loading">#FF9800</color>
+    <color name="toolbar_bg">#1A237E</color>
+    <color name="image_border">#5C6BC0</color>
+</resources>

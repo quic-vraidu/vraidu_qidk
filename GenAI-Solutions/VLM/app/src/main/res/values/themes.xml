@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved. -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<resources>
+    <style name="Theme.VLM_Assistant" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorSurface</item>
+    </style>
+
+    <style name="Theme.VLM_Assistant.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved. -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Image access from gallery -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VLM_Assistant"
+        tools:targetApi="31">
+
+        <!-- Required by Genie SDK for DSP/HTP acceleration -->
+        <uses-native-library
+            android:name="libcdsprpc.so"
+            android:required="true" />
+        <uses-native-library
+            android:name="libOpenCL.so"
+            android:required="true" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".VLMChatActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+    </application>
+</manifest>

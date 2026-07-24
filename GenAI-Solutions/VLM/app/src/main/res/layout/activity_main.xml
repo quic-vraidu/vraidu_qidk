@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2025 Qualcomm Innovation Center, Inc. All rights reserved. -->
+<!-- SPDX-License-Identifier: BSD-3-Clause -->
+<!--
+  MainActivity layout: model load screen.
+  - Shows model name and load button
+  - Load button + progress bar
+  - FAB to launch chat once loaded
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSurface">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/white" />
+
+    <!-- Qualcomm / VLM logo area -->
+    <TextView
+        android:id="@+id/tvModelLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Vision Language Model"
+        android:textSize="13sp"
+        android:textColor="@color/colorAccent"
+        android:textAllCaps="true"
+        android:letterSpacing="0.1"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tvModelName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/model_name"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/tvModelLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tvModelHint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/model_hint"
+        android:textSize="12sp"
+        android:textColor="@color/colorOnSurface"
+        android:alpha="0.6"
+        app:layout_constraintTop_toBottomOf="@id/tvModelName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center" />
+
+    <!-- Load button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLoadModel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/load_model"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:backgroundTint="@color/colorPrimary"
+        app:cornerRadius="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvModelHint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Progress bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnLoadModel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Status text -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="@color/colorOnSurface"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- FAB: launch chat -->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/start_chat"
+        android:textAllCaps="false"
+        android:enabled="false"
+        android:alpha="0.5"
+        app:icon="@android:drawable/ic_dialog_info"
+        app:backgroundTint="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
